@@ -2,8 +2,12 @@ package hello.core.member;
 
 public class MemberServiceImpl implements MemberService {
 
-    // 다형성 사용
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    // 생성자를 통해 구현체를 지정해준다. -> 추상화에만 의존 (DIP을 지킴)
+    private final MemberRepository memberRepository;
+
+    public MemberServiceImpl(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     @Override
     public void join(Member member) {
