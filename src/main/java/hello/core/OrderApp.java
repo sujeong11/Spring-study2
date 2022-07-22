@@ -19,7 +19,7 @@ public class OrderApp {
         Member member = new Member(memberId, "memberA", Grade.VIP);
         memberService.join(member);
 
-        Order order = orderService.createOrder(memberId, "itemA", 10000);
+        Order order = orderService.createOrder(memberId, "itemA", 20000);
 
         // toString()으로 오버라이딩한 메서드의 내용이 호출
         System.out.println("order = " + order);
