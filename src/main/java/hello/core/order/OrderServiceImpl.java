@@ -10,17 +10,10 @@ import org.springframework.stereotype.Component;
 public class OrderServiceImpl implements OrderService {
 
     // 생성자를 통해 구현체를 지정해준다. -> 추상화에만 의존 (DIP을 지킴)
+    @Autowired
     private MemberRepository memberRepository;
+    @Autowired
     private DiscountPolicy discountPolicy;
-
-    @Autowired
-    public void setMemberRepository(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
-    }
-    @Autowired
-    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
-        this.discountPolicy = discountPolicy;
-    }
 
 //    @Autowired
 //    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
